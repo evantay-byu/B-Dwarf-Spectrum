@@ -1,0 +1,3 @@
+Make the code that will seperate the Brown Dwarves
+Find a way to pull spectrophotometry data for those chunks of dwarves
+use mathplot to plot the spectrums of those brown dwarves
