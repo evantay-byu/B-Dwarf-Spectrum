@@ -1,5 +1,4 @@
 Split the Brown Dwares into groups of 20
 find ways to pull the spectrophotometry data with their position now known
 analyze and compare their spectrums to other brown dwarves close by
-this is a merge conflict.
-
+plot the amount of stars on the stellar sky as a plot
