@@ -55,7 +55,7 @@ for i in range(len(dec_edges) - 1):
         )
         current_chunk = df_small[mask]
 
-        if len(current_chunk) >= 1:
+"""        if len(current_chunk) >= 1:
             # Check if this chunk contains any of the six high-priority dwarfs
             chunk_names = set(current_chunk["name"])
             contains_priority = len(chunk_names.intersection(high_priority_names)) > 0
@@ -70,7 +70,7 @@ for i in range(len(dec_edges) - 1):
                 f"(priority={contains_priority})"
             )
             k += 1
-
+"""
 
 ### When working on this section, first iterate with i <dec <= i +1, then j < ra <= j + 1
 
