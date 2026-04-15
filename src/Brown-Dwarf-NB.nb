@@ -10,22 +10,150 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[      1113,         40]
-NotebookOptionsPosition[       755,         26]
-NotebookOutlinePosition[      1159,         42]
-CellTagsIndexPosition[      1116,         39]
+NotebookDataLength[      7054,        172]
+NotebookOptionsPosition[      6454,        154]
+NotebookOutlinePosition[      6872,        170]
+CellTagsIndexPosition[      6829,        167]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dwarfNum", " ", "=", " ", "20"}], ";", " ", 
+  RowBox[{"raBins", " ", "=", " ", "36"}], ";", " ", 
+  RowBox[{"decBins", " ", "=", " ", "36"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BrownData", " ", "=", " ", 
+   RowBox[{"Import", "[", "\"\<UltracoolSheetMain.csv\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"headers", " ", "=", " ", 
+    RowBox[{"First", "[", "BrownData", "]"}]}], ";", " ", 
+   RowBox[{"rows", " ", "=", " ", 
+    RowBox[{"Rest", "[", "BrownData", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "This", " ", "beginning", " ", "part", " ", "is", " ", "seperating", " ", 
+    "the", " ", "header", " ", "row", " ", "from", " ", "the", " ", "rest", " ",
+     "of", " ", "the", " ", "data", " ", "we", " ", "import"}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"smallBrownData", "=", 
+   RowBox[{"rows", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"First", "@", 
+         RowBox[{"First", "@", 
+          RowBox[{"Position", "[", 
+           RowBox[{"headers", ",", "\"\<name\>\""}], "]"}]}]}], ",", 
+        RowBox[{"First", "@", 
+         RowBox[{"First", "@", 
+          RowBox[{"Position", "[", 
+           RowBox[{"headers", ",", "\"\<name_simbadable\>\""}], "]"}]}]}], ",", 
+        RowBox[{"First", "@", 
+         RowBox[{"First", "@", 
+          RowBox[{"Position", "[", 
+           RowBox[{"headers", ",", "\"\<ra_j2000_formula\>\""}], "]"}]}]}], ",", 
+        RowBox[{"First", "@", 
+         RowBox[{"First", "@", 
+          RowBox[{"Position", "[", 
+           RowBox[{"headers", ",", "\"\<dec_j2000_formula\>\""}], "]"}]}]}]}],
+        "}"}]}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "This", " ", "code", " ", "is", " ", "taking", " ", "only", " ", "the", " ",
+     "columns", " ", "with", " ", "the", " ", "header", " ", "names", " ", 
+    "as", " ", "the", " ", "strings", " ", "and", " ", "making", " ", "a", " ",
+     "smaller", " ", "list", " ", "with", " ", "only", " ", "those", " ", "4",
+     " ", "headers"}], "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"highValue", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"\"\<SDSS J090900.73+652527.2\>\"", 
+     ",", "\"\<SDSS J075840.33+324723.4\>\"", 
+     ",", "\"\<2MASS J11220826-3512363\>\"", 
+     ",", "\"\<SDSS J104829.21+091937.8\>\"", 
+     ",", "\"\<SDSS J143553.25+112948.6\>\"", 
+     ",", "\"\<SDSS J011912.22+240331.6\>\""}], "}"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "You", " ", "can", " ", "change", " ", "this", " ", "value", " ", "if", " ",
+     "you", " ", "want", " ", "to", " ", "look", " ", "for", " ", "specific", 
+    " ", "star", " ", "names", " ", "from", " ", "the", " ", "CSV", " ", 
+    "file"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.9848503440505695`*^9, 3.9848503534888783`*^9}, {
+  3.9852028412700787`*^9, 3.9852028604989796`*^9}, {3.985202919339319*^9, 
+  3.9852029276757565`*^9}, {3.985203136360752*^9, 3.985203234449196*^9}, {
+  3.9852032651172104`*^9, 3.985203287227602*^9}, {3.985203374172817*^9, 
+  3.985203476282036*^9}, {3.9852035724580517`*^9, 3.9852035835435867`*^9}, {
+  3.985203617459715*^9, 3.985203736708582*^9}, {3.985203953387829*^9, 
+  3.9852040629839096`*^9}, {3.985204107593521*^9, 
+  3.985204135368717*^9}},ExpressionUUID->"f92537bb-99fa-ff43-9338-\
+e8a5ff846f8c"],
+
 Cell[BoxData[
- RowBox[{"dwarfNum", " ", "=", " ", "20"}]], "Input",
- CellChangeTimes->{{3.9848503440505695`*^9, 
-  3.9848503534888783`*^9}},ExpressionUUID->"f92537bb-99fa-ff43-9338-\
-e8a5ff846f8c"]
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"{", 
+       RowBox[{
+         RowBox[{"{", 
+           
+           RowBox[{"\"ULAS J000010.43+113602.2\"", ",", 
+             "\"ULAS J000010.43+113602.2\"", ",", "0.0432`", ",", "11.602`"}],
+            "}"}], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"SDSS J000013.54+255418.6\"", ",", 
+             "\"2MASS J00001354+2554180\"", ",", "0.0565`", ",", "25.905`"}], 
+           "}"}], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"PSO J000.2794+16.6237\"", ",", 
+             "\"Gaia DR2 2772504778021649152\"", ",", "0.2792`", ",", 
+             "16.6241`"}], "}"}], ",", 
+         TemplateBox[{"3885"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"WISEP J235941.07-733504.8\"", ",", 
+             "\"2MASS J23594034-7335055\"", ",", "359.9184`", ",", 
+             RowBox[{"-", "73.5848`"}]}], "}"}], ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"SSSPM J2400-2008\"", ",", "\"SSSPM J2400-2008\"", ",", 
+             "359.9902`", ",", 
+             RowBox[{"-", "20.1279`"}]}], "}"}]}], "}"}], Short[#, 8]& ], 
+   "line" -> 12, "sessionID" -> 33426748017199925511, "byteCount" -> 826624, 
+   "size" -> 8, "stored" -> False, "expr" -> Missing["NotStored"], "wrap" -> 
+   OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{3.9852034879497643`*^9, 3.9852036514478645`*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"53885408-7028-674c-8b83-fb53114aad1f"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"ContourPlot", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "This", " ", "will", " ", "plot", " ", "the", " ", "brown", " ", "dwarves",
+     " ", "from", " ", "the", " ", "CSV", " ", "and", " ", "show", " ", 
+    "their", " ", "place", " ", "in", " ", "the", " ", "celestial", " ", 
+    "sphere"}], "*)"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.9852041508272247`*^9, 3.9852041863257656`*^9}, {
+  3.985204223586458*^9, 3.9852043133462467`*^9}, {3.9852047618664837`*^9, 
+  3.985204766944956*^9}},ExpressionUUID->"65d46e10-524c-cf46-a976-\
+543fe8c4c40e"]
 },
-WindowSize->{571.8, 596.4},
-WindowMargins->{{284.4, Automatic}, {12, Automatic}},
+WindowSize->{574.8, 645.6},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
 FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"9cac3224-f14b-874f-af2a-d7a126feb782"
@@ -41,10 +169,12 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 197, 4, 28, "Input",ExpressionUUID->"f92537bb-99fa-ff43-9338-e8a5ff846f8c"]
+Cell[CellGroupData[{
+Cell[576, 22, 3657, 79, 446, "Input",ExpressionUUID->"f92537bb-99fa-ff43-9338-e8a5ff846f8c"],
+Cell[4236, 103, 1572, 35, 159, "Output",ExpressionUUID->"53885408-7028-674c-8b83-fb53114aad1f"]
+}, Open  ]],
+Cell[5823, 141, 627, 11, 104, "Input",ExpressionUUID->"65d46e10-524c-cf46-a976-543fe8c4c40e"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
