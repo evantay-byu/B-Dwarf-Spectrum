@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    108493,       2168]
-NotebookOptionsPosition[    106594,       2130]
-NotebookOutlinePosition[    106995,       2146]
-CellTagsIndexPosition[    106952,       2143]
+NotebookDataLength[    109981,       2207]
+NotebookOptionsPosition[    108082,       2169]
+NotebookOutlinePosition[    108483,       2185]
+CellTagsIndexPosition[    108440,       2182]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1955,10 +1955,15 @@ Cell[BoxData[{
   RowBox[{"Module", "[", 
    RowBox[{
     RowBox[{"{", 
-     RowBox[{"Bd", " ", "=", " ", 
-      RowBox[{
-      "Input", "[", "\"\<input JSON Brown Dwarf Spectrum\>\"", "]"}]}], " ", 
-     "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Bd", " ", "=", " ", 
+       RowBox[{
+       "Input", "[", "\"\<input JSON Brown Dwarf Spectrum\>\"", "]"}]}], " ", 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"Bd2", " ", "=", " ", 
+       RowBox[{
+       "Input", "[", "\"\<input a second JSON Brown Dwarf Spectrum\>\"", 
+        "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{"BdSpect", " ", "=", " ", 
       RowBox[{"Import", "[", 
@@ -1976,20 +1981,54 @@ Cell[BoxData[{
        RowBox[{"[", 
         RowBox[{"1", ",", "\"\<y\>\""}], "]"}], "]"}]}], ";", 
      "\[IndentingNewLine]", 
-     RowBox[{"ListPlot", "[", 
+     RowBox[{"plot1", " ", "=", " ", 
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "[", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y"}], "}"}], "]"}], ",", 
+        RowBox[{"Joined", "->", "True"}], ",", " ", 
+        RowBox[{"AxesLabel", "->", 
+         RowBox[{"{", 
+          
+          RowBox[{"\"\<Micrometers (\[Micro]m)\>\"", ",", 
+           " ", "\"\<Microjanksys (\[Micro]Jy)\>\""}], "}"}]}]}], "]"}]}], ";",
+      "\[IndentingNewLine]", 
+     RowBox[{"BdSpect2", " ", "=", " ", 
+      RowBox[{"Import", "[", 
+       RowBox[{"Bd2", ",", " ", "\"\<RawJSON\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"x2", " ", "=", " ", 
       RowBox[{
-       RowBox[{"Transpose", "[", 
-        RowBox[{"{", 
-         RowBox[{"x", ",", "y"}], "}"}], "]"}], ",", 
-       RowBox[{"Joined", "->", "True"}], ",", " ", 
-       RowBox[{"AxesLabel", "->", 
-        RowBox[{"{", 
-         RowBox[{"\"\<Micrometers (\[Micro]m)\>\"", ",", 
-          " ", "\"\<Microjanksys (\[Micro]Jy)\>\""}], "}"}]}]}], "]"}]}]}], 
-   "]"}]}], "\[IndentingNewLine]", 
+       RowBox[{"BdSpect2", "[", "\"\<data\>\"", "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", " ", "\"\<x\>\""}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"y2", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"BdSpect2", "[", "\"\<data\>\"", "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", " ", "\"\<y\>\""}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"plot2", " ", "=", " ", 
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "[", 
+         RowBox[{"{", 
+          RowBox[{"x2", ",", "y2"}], "}"}], "]"}], ",", 
+        RowBox[{"Joined", "->", "True"}], ",", " ", 
+        RowBox[{"AxesLabel", "->", 
+         RowBox[{"{", 
+          
+          RowBox[{"\"\<Micrometers (\[Micro]m)\>\"", ",", 
+           " ", "\"\<Microjanksys (\[Micro]Jy)\>\""}], "}"}]}]}], "]"}]}], ";", 
+     RowBox[{"Show", "[", 
+      RowBox[{"plot1", ",", " ", "plot2"}], "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
  RowBox[{"plotspec", "[", "]"}]}], "Input",
- CellChangeTimes->{{3.985364650265072*^9, 3.9853647173723736`*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"ec8f393c-22e1-d944-a743-54e0abd682f0"],
+ CellChangeTimes->{{3.985364650265072*^9, 3.9853647173723736`*^9}, {
+  3.9853651060807457`*^9, 
+  3.9853653898276215`*^9}},ExpressionUUID->"ec8f393c-22e1-d944-a743-\
+54e0abd682f0"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -2164,11 +2203,11 @@ Cell[75003, 1465, 258, 4, 28, "Input",ExpressionUUID->"b6b71c6f-688b-ee40-a454-6
 Cell[75264, 1471, 24866, 475, 232, "Output",ExpressionUUID->"cccf6b39-2791-6b46-80ff-da528452001f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[100167, 1951, 1529, 40, 123, "Input",ExpressionUUID->"ec8f393c-22e1-d944-a743-54e0abd682f0"],
-Cell[101699, 1993, 464, 11, 26, "Message",ExpressionUUID->"3b56a508-9106-544e-85fa-abb2cb902495"],
-Cell[102166, 2006, 415, 10, 26, "Message",ExpressionUUID->"f8bc41a0-40e2-524c-9708-bc630b4ae027"],
-Cell[102584, 2018, 417, 10, 26, "Message",ExpressionUUID->"2ed7795a-98ad-1543-b721-1a86ca662c75"],
-Cell[103004, 2030, 3574, 97, 201, "Output",ExpressionUUID->"1df97f05-4ba3-5343-9cc7-8a5cf962756c"]
+Cell[100167, 1951, 3017, 79, 237, "Input",ExpressionUUID->"ec8f393c-22e1-d944-a743-54e0abd682f0"],
+Cell[103187, 2032, 464, 11, 26, "Message",ExpressionUUID->"3b56a508-9106-544e-85fa-abb2cb902495"],
+Cell[103654, 2045, 415, 10, 26, "Message",ExpressionUUID->"f8bc41a0-40e2-524c-9708-bc630b4ae027"],
+Cell[104072, 2057, 417, 10, 26, "Message",ExpressionUUID->"2ed7795a-98ad-1543-b721-1a86ca662c75"],
+Cell[104492, 2069, 3574, 97, 201, "Output",ExpressionUUID->"1df97f05-4ba3-5343-9cc7-8a5cf962756c"]
 }, Open  ]]
 }
 ]
