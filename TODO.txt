@@ -5,4 +5,5 @@ Analyze and compare their spectrums to other brown dwarves close by
 Plot the amount of stars on the stellar sky as a plot
 Use https://irsa.ipac.caltech.edu/applications/spherex/tool-spectrophotometry to find the spectrophotometry for some test Brown Dwarves and download that data
 Create a function that will take the JSON data from IRSA and plot the wavelength and flux
-
+Finish up getting the names with the RAs and Decs in the binning
+Add axes labels to graph module
