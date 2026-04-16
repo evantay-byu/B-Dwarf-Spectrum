@@ -1,4 +1,6 @@
-Split the Brown Dwares into groups of 20
-find ways to pull the spectrophotometry data with their position now known
-analyze and compare their spectrums to other brown dwarves close by
-plot the amount of stars on the stellar sky as a plot
+Split the Brown Dwarves into groups of 20
+Export grouped brown dwarves to folder
+Find ways to pull the spectrophotometry data with their position now known
+Analyze and compare their spectrums to other brown dwarves close by
+Plot the amount of stars on the stellar sky as a plot
+
